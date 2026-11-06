@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TermKit · CRT 终端工具箱</title>
+  <meta name="description" content="一台老式 CRT 终机：敲命令完成 Base64、URL 编码、时间戳、UUID、密码生成、JSON 美化等日常杂活。" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 显示器外壳 -->
+  <div class="crt-shell">
+    <div class="crt-bezel">
+      <!-- 屏幕内容 -->
+      <div class="screen" id="screen">
+
+        <!-- 开机画面 -->
+        <div class="boot" id="boot">
+          <pre>
+  ████████╗███████╗██████╗ ███╗   ███╗██╗███╗   ██╗
+  ╚══██╔══╝██╔════╝██╔══██╗████╗ ████║██║████╗  ██║
+     ██║   █████╗  ██████╔╝██╔████╔██║██║██╔██╗ ██║
+     ██║   ██╔══╝  ██╔══██╗██║╚██╔╝██║██║██║╚██╗██║
+     ██║   ███████╗██║  ██║██║ ╚═╝ ██║██║██║ ╚████║
+     ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝
+          K I T  ·  C R T  终 端 工 具 箱  v2.6
+          ────────────────────────────────────
+          BIOS CHECK ......... OK
+          PHOSPHOR ........... GREEN
+          SCANLINE ........... ENABLED
+          MEMORY ............. 640K (足够任何人用)</pre>
+          <p class="boot-hint">按任意键进入终端 ▌</p>
+        </div>
+
+        <!-- 终端主体（JS 生成） -->
+        <div class="term" id="term" hidden></div>
+
+        <!-- 底部提示条 -->
+        <div class="statusbar" id="statusbar" hidden>
+          <span id="sbLeft">READY</span>
+          <span id="sbRight">F1 帮助 · ↑↓ 历史 · ESC 清屏</span>
+        </div>
+      </div>
+
+      <!-- 品牌铭 + 电源灯 -->
+      <div class="bezel-bottom">
+        <span class="brand">⬥ PHOSPHOR-9000</span>
+        <span class="led" id="led"></span>
+      </div>
+    </div>
+
+    <!-- 底座 -->
+    <div class="crt-neck"></div>
+    <div class="crt-foot"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
